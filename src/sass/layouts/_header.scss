@@ -1,0 +1,16 @@
+header{
+    background-color: $color-primary;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo{
+    cursor: pointer;
+}
+
+.hamburger-menu{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
