@@ -1,16 +1,88 @@
 header{
     background-color: $color-primary;
-    padding: 25px;
     display: flex;
     justify-content: space-between;
+
+    @include desktop-only{
+        position: absolute;
+        width: 100%;
+        top: 30px;
+        background-color: transparent;
+    }
 }
 
 .header__logo{
     cursor: pointer;
+    margin: 25px;
 }
 
-.hamburger-menu{
+.hamburger-button{
     border: none;
     background-color: transparent;
     cursor: pointer;
+    margin-right: 20px;
+}
+
+.nav-mobile{
+    background-color: red;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 270px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.nav-mobile__close-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    align-self: flex-end;
+    margin: 25px 20px;
+
+    img{
+        width: 25px;
+    }
+}
+
+.nav-mobile ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-mobile a{
+    text-decoration: none;
+    color: $color-tertiary;
+    margin-bottom: 30px;
+}
+
+.nav-mobile b{
+    margin-right: 13px;
+}
+
+.nav-tablet ul{
+    display: flex;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    background: #ffffff16;
+    backdrop-filter: blur(5px);
+}
+
+.nav-tablet li{
+    height: 100%;
+}
+
+.nav-tablet a{
+    text-decoration: none;
+    color: $color-tertiary;
+    margin-right: 40px;
+    min-height: 100%;
+    padding: auto;
+    display: flex;
+    align-items: center;
 }

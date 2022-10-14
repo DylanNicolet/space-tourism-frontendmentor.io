@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
 
-p {
+body {
     font-family: 'Barlow', sans-serif;
+    color: $color-tertiary;
 }
 
 h1 h2 h3 h4 h5 h6 {

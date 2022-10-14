@@ -5,14 +5,12 @@ export const webConfigSlice = createSlice({
     initialState:{
         screenWidth: window.innerWidth,
         desktopWidth: 1024,
+        tabletWidth: 768,
     },
     reducers:{
         updateScreenWidth: (state, action) => {
             state.screenWidth = action.payload
         },
-        updateModalSoins: (state, action) => {
-            state.modalSoins = action.payload
-        }
     },
 })
 
