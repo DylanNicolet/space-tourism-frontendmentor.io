@@ -42,13 +42,15 @@ export default function Header(){
                 </nav>
             }
 
+            {screenWidth>=desktopWidth && <section className="nav-desktop__decorative-line"></section>}
+
             {screenWidth>=tabletWidth &&
                 <nav className="nav-tablet">
                     <ul>
-                        <NavLink to="/" style={({ isActive }) => isActive? activeStyle : undefined}>HOME</NavLink>
-                        <NavLink to="destination" style={({ isActive }) => isActive? activeStyle : undefined}>DESTINATION</NavLink>
-                        <NavLink to="crew" style={({ isActive }) => isActive? activeStyle : undefined}>CREW</NavLink>
-                        <NavLink to="technology" style={({ isActive }) => isActive? activeStyle : undefined}>TECHNOLOGY</NavLink>
+                        <NavLink to="/" style={({ isActive }) => isActive? activeStyle : undefined}>{screenWidth>=desktopWidth && <b>00</b>}HOME</NavLink>
+                        <NavLink to="destination" style={({ isActive }) => isActive? activeStyle : undefined}>{screenWidth>=desktopWidth && <b>01</b>}DESTINATION</NavLink>
+                        <NavLink to="crew" style={({ isActive }) => isActive? activeStyle : undefined}>{screenWidth>=desktopWidth && <b>02</b>}CREW</NavLink>
+                        <NavLink to="technology" style={({ isActive }) => isActive? activeStyle : undefined}>{screenWidth>=desktopWidth && <b>03</b>}TECHNOLOGY</NavLink>
                     </ul>
                 </nav>
             }

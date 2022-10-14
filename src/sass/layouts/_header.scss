@@ -1,19 +1,23 @@
 header{
-    background-color: $color-primary;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
 
     @include desktop-only{
-        position: absolute;
-        width: 100%;
         top: 30px;
-        background-color: transparent;
     }
 }
 
 .header__logo{
     cursor: pointer;
     margin: 25px;
+
+    @include desktop-only{
+        margin-left: 55px;
+    }
 }
 
 .hamburger-button{
@@ -24,7 +28,8 @@ header{
 }
 
 .nav-mobile{
-    background-color: red;
+    background-color: #ffffff16;
+    backdrop-filter: blur(30px);
     position: fixed;
     top: 0;
     right: 0;
@@ -70,7 +75,12 @@ header{
     height: 100%;
     margin: 0;
     background: #ffffff16;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(30px);
+
+    @include desktop-only{
+        padding-right: 130px;
+        padding-left: 100px;
+    }
 }
 
 .nav-tablet li{
@@ -78,6 +88,7 @@ header{
 }
 
 .nav-tablet a{
+    color: $color-tertiary;
     text-decoration: none;
     color: $color-tertiary;
     margin-right: 40px;
@@ -85,4 +96,21 @@ header{
     padding: auto;
     display: flex;
     align-items: center;
+
+    &:hover{
+        border-bottom: 4px solid #ffffff5a;
+    }
+}
+
+.nav-tablet b{
+    margin-right: 13px;
+}
+
+.nav-desktop__decorative-line{
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.808);
+    height: 0.5px;
+    align-self: center;
+    transform: translateX(50px);
+    z-index: 5;
 }

@@ -1,0 +1,129 @@
+.homepage{
+    padding-top: 110px;
+    min-height: 100vh;
+    background-image: url("/src/assets/home/background-home-mobile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include tablet-only{
+        background-image: url("/src/assets/home/background-home-tablet.jpg");
+    }
+
+    @include desktop-only{
+        background-image: url("/src/assets/home/background-home-desktop.jpg");
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.text-container{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+
+    @include tablet-only{
+        margin: 60px auto auto auto;
+    }
+
+    @include desktop-only{
+        width: 500px;
+        height: 350px;
+        margin: auto auto 180px auto;
+        text-align: left;
+    }
+}
+
+.text-container__slogan{
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: $color-secondary;
+
+    @include tablet-only{
+        font-size: 1.4rem;
+    }
+
+    @include desktop-only{
+        margin-left: 5px;
+        font-size: 2.3rem;
+    }
+}
+
+.text-container__title{
+    font-size: 6rem;
+    margin: 35px auto;
+
+    @include tablet-only{
+        font-size: 8.5rem;
+        margin: 30px auto;
+    }
+}
+
+.text-container__text{
+    font-weight: 300;
+    color: $color-secondary;
+
+    @include tablet-only{
+        width: 430px;
+        margin: auto;
+        font-size: 1.1rem;
+    }
+
+    @include desktop-only{
+        margin: 0;
+        line-height: 27px;
+    }
+}
+
+.explore-button{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px auto 0px auto;
+    background-color: $color-tertiary;
+
+    @include tablet-only{
+        margin: 180px auto 0px auto;
+        width: 250px;
+        height: 250px;
+    }
+
+    @include desktop-only{
+        margin: auto auto 140px auto;
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.explore-button__text{
+    color: black;
+    font-family: 'Bellefair', serif;
+    font-size: 1.4rem;
+
+    @include desktop-only{
+        font-size: 2.2rem;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    &:hover{
+        @include desktop-only{
+            background-color: rgba(255, 255, 255, 0.141);
+            scale: 1.5;
+            font-size: 1.46rem;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
