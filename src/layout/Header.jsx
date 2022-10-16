@@ -34,10 +34,10 @@ export default function Header(){
                 <nav className="nav-mobile">
                     <button className="nav-mobile__close-button" onClick={handleCloseNav}><img src={iconClose} alt="" /></button>
                     <ul>
-                        <NavLink><b>00</b> HOME</NavLink>
-                        <NavLink><b>01</b> DESTINATION</NavLink>
-                        <NavLink><b>02</b> CREW</NavLink>
-                        <NavLink><b>03</b> TECHNOLOGY</NavLink>
+                        <NavLink to="/" end><b>00</b> HOME</NavLink>
+                        <NavLink to="destination" ><b>01</b> DESTINATION</NavLink>
+                        <NavLink to="crew"><b>02</b> CREW</NavLink>
+                        <NavLink to="technology"><b>03</b> TECHNOLOGY</NavLink>
                     </ul>
                 </nav> : null
             }
@@ -47,7 +47,7 @@ export default function Header(){
             {screenWidth>=tabletWidth &&
                 <nav className="nav-tablet">
                     <ul>
-                        <NavLink to="/" style={({ isActive }) => isActive? activeStyle : undefined}>{screenWidth>=desktopWidth && <b>00</b>}HOME</NavLink>
+                        <NavLink to="/" style={({ isActive }) => isActive? activeStyle : undefined} end>{screenWidth>=desktopWidth && <b>00</b>}HOME</NavLink>
                         <NavLink to="destination" style={({ isActive }) => isActive? activeStyle : undefined}>{screenWidth>=desktopWidth && <b>01</b>}DESTINATION</NavLink>
                         <NavLink to="crew" style={({ isActive }) => isActive? activeStyle : undefined}>{screenWidth>=desktopWidth && <b>02</b>}CREW</NavLink>
                         <NavLink to="technology" style={({ isActive }) => isActive? activeStyle : undefined}>{screenWidth>=desktopWidth && <b>03</b>}TECHNOLOGY</NavLink>

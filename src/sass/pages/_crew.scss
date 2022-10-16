@@ -1,0 +1,67 @@
+.crew{
+    min-height: 100vh;
+    width: 100vw;
+    padding-top: 100px;
+    background-image: url("/src/assets/crew/background-crew-mobile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include tablet-only{
+        background-image: url("/src/assets/crew/background-crew-tablet.jpg");
+    }
+
+    @include desktop-only{
+        background-image: url("/src/assets/crew/background-crew-desktop.jpg");
+    }
+}
+
+.crew__page-title{
+    margin-top: 0;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+
+    @include desktop-only{
+        font-size: 2.2rem;
+    }
+
+    b{
+        color: grey;
+        margin-right: 10px;
+    }
+}
+
+.crew__image-container{
+    width: 90%;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    border-bottom: 1.5px solid rgba(69, 82, 92, 0.737);
+    overflow: hidden;
+}
+
+.crew__image{
+    width: 55%;
+    margin: auto;
+    transform: translateY(4px);
+}
+
+.crew__navigation-container{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.crew__navigation-container button{
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.398);
+    border: none;
+}
+
+#crew-nav-button--active{
+    background-color: white;
+}

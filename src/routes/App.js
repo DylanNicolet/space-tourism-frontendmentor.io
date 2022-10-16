@@ -9,6 +9,7 @@ import { updateScreenWidth } from "../redux/webConfigSlice";
 export default function App() {
   const dispatch = useDispatch()
 
+  //Screen width tracker (Updates redux store live)
   React.useEffect(() => {
     function handleResize(){
       dispatch(updateScreenWidth(window.innerWidth))
