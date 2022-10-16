@@ -1,6 +1,11 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Homepage(){
+    const screenWidth = useSelector((state) => state.webConfig.screenWidth)
+    const desktopWidth = useSelector((state) => state.webConfig.desktopWidth)
+
     return(
         <section className="homepage">
             <section className="text-container">
@@ -13,7 +18,8 @@ export default function Homepage(){
             </section>
 
             <section className="explore-button">
-                <p className="explore-button__text">EXPLORE</p>
+                {screenWidth>=desktopWidth && <section className="explore-button__desktop-hover"></section>}
+                <NavLink to={"destination"} className="explore-button__text">EXPLORE</NavLink>
             </section>
         </section> 
     )

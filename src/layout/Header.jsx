@@ -30,7 +30,7 @@ export default function Header(){
             <img src={logo} alt="logo" className="header__logo"/>
 
             {screenWidth<tabletWidth && <button className="hamburger-button" onClick={handleOpenNav} ><img src={hamburger} alt="" /></button>}
-            {navOpen &&
+            {navOpen && screenWidth<tabletWidth? 
                 <nav className="nav-mobile">
                     <button className="nav-mobile__close-button" onClick={handleCloseNav}><img src={iconClose} alt="" /></button>
                     <ul>
@@ -39,7 +39,7 @@ export default function Header(){
                         <NavLink><b>02</b> CREW</NavLink>
                         <NavLink><b>03</b> TECHNOLOGY</NavLink>
                     </ul>
-                </nav>
+                </nav> : null
             }
 
             {screenWidth>=desktopWidth && <section className="nav-desktop__decorative-line"></section>}

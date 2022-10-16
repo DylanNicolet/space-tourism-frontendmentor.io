@@ -87,6 +87,7 @@
     justify-content: center;
     margin: 60px auto 0px auto;
     background-color: $color-tertiary;
+    position: relative;
 
     @include tablet-only{
         margin: 180px auto 0px auto;
@@ -99,12 +100,34 @@
         width: 300px;
         height: 300px;
     }
+
+    &:hover > .explore-button__desktop-hover{
+        @include desktop-only{
+            scale: 1.6;
+            transition: scale 0.5s ease;
+        }
+    }
+}
+
+/*---This section will render only on desktop for animation purposes---*/
+.explore-button__desktop-hover{
+    background-color: rgba(255, 255, 255, 0.161);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: scale 0.5s ease;
 }
 
 .explore-button__text{
     color: black;
     font-family: 'Bellefair', serif;
     font-size: 1.4rem;
+    text-decoration: none;
+    z-index: 3;
 
     @include desktop-only{
         font-size: 2.2rem;
@@ -117,13 +140,5 @@
         margin: auto;
         cursor: pointer;
     }
-
-    &:hover{
-        @include desktop-only{
-            background-color: rgba(255, 255, 255, 0.141);
-            scale: 1.5;
-            font-size: 1.46rem;
-            transition: all 0.5s ease-in-out;
-        }
-    }
 }
+

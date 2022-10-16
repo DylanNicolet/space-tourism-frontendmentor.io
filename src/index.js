@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './routes/App';
 import Homepage from './routes/Homepage';
+import Destination from './routes/Destination';
 import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +15,7 @@ root.render(
         <Routes>
           <Route path='/' element={<App />}>
             <Route path='/' element={<Homepage />}></Route>
+            <Route path='destination' element={<Destination />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
