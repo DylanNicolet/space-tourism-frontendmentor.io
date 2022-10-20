@@ -9,6 +9,8 @@
 
     @include tablet-only{
         background-image: url("/src/assets/crew/background-crew-tablet.jpg");
+        display: flex;
+        flex-direction: column;
     }
 
     @include desktop-only{
@@ -21,6 +23,14 @@
     text-align: center;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
+
+    @include tablet-only{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        text-align: left;
+        font-size: 1.4rem;
+    }
 
     @include desktop-only{
         font-size: 2.2rem;
@@ -38,11 +48,23 @@
     text-align: center;
     border-bottom: 1.5px solid rgba(69, 82, 92, 0.737);
     overflow: hidden;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    @include tablet-only{
+        order: 3;
+        align-self: flex-end;
+        margin: auto auto 0 auto;
+        border-bottom: none;
+        overflow: visible;
+    }
+
 }
 
 .crew__image{
     width: 55%;
-    margin: auto;
     transform: translateY(4px);
 }
 
@@ -50,11 +72,17 @@
     width: 100%;
     text-align: center;
     margin-top: 20px;
+
+    @include tablet-only{
+        order: 2;
+        margin-top: 30px;
+    }
+    
 }
 
 .crew__navigation-container button{
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     padding: 0;
     border-radius: 50%;
     margin: 10px;
@@ -64,4 +92,43 @@
 
 #crew-nav-button--active{
     background-color: white;
+}
+
+.crew__text-container{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.crew__role{
+    text-transform: uppercase;
+    color: darken($color-tertiary, 30%);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+
+    @include tablet-only{
+        font-size: 1.7rem;
+    }
+}
+
+.crew__name{
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 1.7rem;
+
+    @include tablet-only{
+        font-size: 2.8rem;
+    }
+}
+
+.crew__description{
+    width: 87%;
+    margin: auto;
+    color: $color-secondary;
+    margin-top: 20px;
+
+    @include tablet-only{
+        font-size: 1.2rem;
+        width: 70%;
+    }
 }
