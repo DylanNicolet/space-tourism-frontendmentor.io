@@ -15,6 +15,7 @@
 
     @include desktop-only{
         background-image: url("/src/assets/crew/background-crew-desktop.jpg");
+        text-align: left;
     }
 }
 
@@ -33,7 +34,9 @@
     }
 
     @include desktop-only{
-        font-size: 2.2rem;
+        font-size: 2rem;
+        width: 75%;
+        margin-top: 70px;
     }
 
     b{
@@ -61,11 +64,23 @@
         overflow: visible;
     }
 
+    @include desktop-only {
+        width: 35%;
+        position: absolute;
+        right: 100px;
+        bottom: 0;
+    }
+
 }
 
 .crew__image{
     width: 55%;
     transform: translateY(4px);
+
+    @include desktop-only{
+        width: 100%;
+        transform: none;
+    }
 }
 
 .crew__navigation-container{
@@ -78,6 +93,11 @@
         margin-top: 30px;
     }
     
+    @include desktop-only{
+        margin: auto;
+        text-align: left;
+        width: 75%;
+    }
 }
 
 .crew__navigation-container button{
@@ -88,6 +108,16 @@
     margin: 10px;
     background-color: rgba(255, 255, 255, 0.398);
     border: none;
+
+    @include desktop-only{
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.584);
+        }
+    }
 }
 
 #crew-nav-button--active{
@@ -97,6 +127,12 @@
 .crew__text-container{
     text-align: center;
     margin-top: 25px;
+
+    @include desktop-only{
+        width: 75%;
+        text-align: left;
+        margin: 140px auto 0 auto;
+    }
 }
 
 .crew__role{
@@ -107,6 +143,10 @@
 
     @include tablet-only{
         font-size: 1.7rem;
+    }
+
+    @include desktop-only{
+        font-size: 2rem;
     }
 }
 
@@ -119,6 +159,10 @@
     @include tablet-only{
         font-size: 2.8rem;
     }
+
+    @include desktop-only{
+        font-size: 3.5rem;
+    }
 }
 
 .crew__description{
@@ -130,5 +174,10 @@
     @include tablet-only{
         font-size: 1.2rem;
         width: 70%;
+    }
+
+    @include desktop-only{
+        margin: 30px 0;
+        width: 45%;
     }
 }
