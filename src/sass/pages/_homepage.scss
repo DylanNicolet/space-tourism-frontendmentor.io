@@ -1,5 +1,6 @@
 .homepage{
     padding-top: 110px;
+    padding-bottom: 50px;
     min-height: 100vh;
     background-image: url("/src/assets/home/background-home-mobile.jpg");
     background-position: center;
@@ -8,6 +9,7 @@
 
     @include tablet-only{
         background-image: url("/src/assets/home/background-home-tablet.jpg");
+        padding-bottom: 0;
     }
 
     @include desktop-only{

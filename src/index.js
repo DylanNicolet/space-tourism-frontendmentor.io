@@ -6,6 +6,7 @@ import App from './routes/App';
 import Homepage from './routes/Homepage';
 import Destination from './routes/Destination';
 import Crew from './routes/Crew';
+import Technology from './routes/Technology';
 import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +19,7 @@ root.render(
             <Route path='/' element={<Homepage />} />
             <Route path='destination' element={<Destination />} />
             <Route path='crew' element={<Crew />} />
+            <Route path='technology' element={<Technology />}/>
           </Route>
         </Routes>
       </BrowserRouter>

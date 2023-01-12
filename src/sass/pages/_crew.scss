@@ -2,12 +2,14 @@
     min-height: 100vh;
     width: 100vw;
     padding-top: 100px;
+    padding-bottom: 80px;
     background-image: url("/src/assets/crew/background-crew-mobile.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
     @include tablet-only{
+        padding-bottom: 0;
         background-image: url("/src/assets/crew/background-crew-tablet.jpg");
         display: flex;
         flex-direction: column;
@@ -78,7 +80,9 @@
     transform: translateY(4px);
 
     @include desktop-only{
-        width: 100%;
+        width: auto;
+        max-height: 80vh;
+        min-height: 60vh;
         transform: none;
     }
 }

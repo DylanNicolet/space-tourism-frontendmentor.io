@@ -13,13 +13,14 @@ export default function Crew(){
         setCurrentCrew(selectedCrew)
     }
 
-    //Map over each crew in databse to create a crew navigation system
+    //Map over each crew in database to create a crew navigation system
     const navigation = crewData.map((crew, index) =>(
         <button 
             id={crew.crewRole.toLowerCase() === currentCrew.crewRole.toLowerCase()? "crew-nav-button--active" : undefined} //Defines which button should be active
             className={crew.crewRole} //Adds the role as className for handleCrewChange() to use
             onClick={e => handleCrewChange(e)}
-            key={index}>
+            key={index}
+        >
         </button>
     ))
 
