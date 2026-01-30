@@ -1,6 +1,5 @@
 import React from "react";
 import database from "../database.json";
-import { useSelector } from "react-redux";
 
 export default function Technology(){
     //All technology data is stored in database.json
@@ -26,20 +25,16 @@ export default function Technology(){
         </button>
     ))
 
-    //Detect screen size for displaying correct image
-    const screenWidth = useSelector((state) => state.webConfig.screenWidth)
-    const desktopWidth = useSelector((state) => state.webConfig.desktopWidth)
-
-
     return(
         <section className="technology">
             <p className="technology__page-title"><b>03</b>SPACE LAUNCH 101</p>
 
             <section className="technology__image-container">
-                <img src={screenWidth >= desktopWidth? currentTechnology.technologyImageportrait : currentTechnology.technologyImageLandscape} alt="" className="technology__image"/>
+                <picture>
+                    <source srcSet={currentTechnology.technologyImageportrait} media="(width >= 1024px)"/> {/* For desktop */}
+                    <img src={currentTechnology.technologyImageLandscape} alt="" className="technology__image"/> {/* Default mobile image */}
+                </picture>
             </section>
-
-            
 
             <section className="technology__navigationAndText-container">
                 <section className="technology__navigation">
@@ -54,7 +49,6 @@ export default function Technology(){
                     <p className="technology__description">{currentTechnology.technologyText}</p>
                 </section>
             </section>
-            
         </section>
     )
 }
