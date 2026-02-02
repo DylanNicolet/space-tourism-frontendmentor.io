@@ -1,5 +1,5 @@
 import React from 'react';
-import '../sass/App.css';
+import '../sass/App.scss';
 import {Outlet} from "react-router-dom";
 import Header from '../layout/Header';
 import { useDispatch } from "react-redux"

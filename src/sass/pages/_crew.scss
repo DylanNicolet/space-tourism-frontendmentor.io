@@ -1,3 +1,5 @@
+@use '../utils' as *;
+
 .crew{
     min-height: 100vh;
     width: 100vw;
@@ -141,7 +143,7 @@
 
 .crew__role{
     text-transform: uppercase;
-    color: darken($color-tertiary, 30%);
+    color: #ffffffa6;
     font-size: 1.1rem;
     margin-bottom: 0;
 
