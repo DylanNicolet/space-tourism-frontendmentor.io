@@ -1,6 +1,6 @@
 @use '../utils' as *;
 
-.crew{
+.crew {
     min-height: 100vh;
     width: 100vw;
     padding-top: 100px;
@@ -10,180 +10,181 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    @include tablet-only{
+    @include tablet-only {
         padding-bottom: 0;
         background-image: url("/src/assets/crew/background-crew-tablet.jpg");
         display: flex;
         flex-direction: column;
     }
 
-    @include desktop-only{
+    @include desktop-only {
         background-image: url("/src/assets/crew/background-crew-desktop.jpg");
         text-align: left;
     }
-}
 
-.crew__page-title{
-    margin-top: 0;
-    text-align: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.2rem;
-
-    @include tablet-only{
-        width: 90%;
-        margin: 0 auto;
-        margin-top: 20px;
-        text-align: left;
-        font-size: 1.4rem;
-    }
-
-    @include desktop-only{
-        font-size: 2rem;
-        width: 75%;
-        margin-top: 70px;
-    }
-
-    b{
-        color: grey;
-        margin-right: 10px;
-    }
-}
-
-.crew__image-container{
-    width: 90%;
-    margin: 30px auto 0 auto;
-    text-align: center;
-    border-bottom: 1.5px solid rgba(69, 82, 92, 0.737);
-    overflow: hidden;
-    height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    @include tablet-only{
-        order: 3;
-        align-self: flex-end;
-        margin: auto auto 0 auto;
-        border-bottom: none;
-        overflow: visible;
-    }
-
-    @include desktop-only {
-        width: 35%;
-        position: absolute;
-        right: 100px;
-        bottom: 0;
-    }
-
-}
-
-.crew__image{
-    width: 55%;
-    transform: translateY(4px);
-
-    @include desktop-only{
-        width: auto;
-        max-height: 80vh;
-        min-height: 60vh;
-        transform: none;
-    }
-}
-
-.crew__navigation-container{
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-
-    @include tablet-only{
-        order: 2;
-        margin-top: 30px;
-    }
+    &__page-title {
+        margin-top: 0;
+        text-align: center;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 1.2rem;
     
-    @include desktop-only{
-        margin: auto;
-        text-align: left;
-        width: 75%;
-    }
-}
-
-.crew__navigation-container button{
-    height: 10px;
-    width: 10px;
-    padding: 0;
-    border-radius: 50%;
-    margin: 10px;
-    background-color: rgba(255, 255, 255, 0.398);
-    border: none;
-
-    @include desktop-only{
-        height: 20px;
-        width: 20px;
-        cursor: pointer;
-
-        &:hover{
-            background-color: rgba(255, 255, 255, 0.584);
+        @include tablet-only{
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 20px;
+            text-align: left;
+            font-size: 1.4rem;
+        }
+    
+        @include desktop-only{
+            font-size: 2rem;
+            width: 75%;
+            margin-top: 70px;
+        }
+    
+        b{
+            color: grey;
+            margin-right: 10px;
         }
     }
-}
 
-#crew-nav-button--active{
-    background-color: white;
-}
-
-.crew__text-container{
-    text-align: center;
-    margin-top: 25px;
-
-    @include desktop-only{
-        width: 75%;
-        text-align: left;
-        margin: 140px auto 0 auto;
-    }
-}
-
-.crew__role{
-    text-transform: uppercase;
-    color: #ffffffa6;
-    font-size: 1.1rem;
-    margin-bottom: 0;
-
-    @include tablet-only{
-        font-size: 1.7rem;
-    }
-
-    @include desktop-only{
-        font-size: 2rem;
-    }
-}
-
-.crew__name{
-    text-transform: uppercase;
-    margin-top: 10px;
-    margin-bottom: 0;
-    font-size: 1.7rem;
-
-    @include tablet-only{
-        font-size: 2.8rem;
+    &__image-container {
+        width: 90%;
+        margin: 30px auto 0 auto;
+        text-align: center;
+        border-bottom: 1.5px solid rgba(69, 82, 92, 0.737);
+        overflow: hidden;
+        height: 280px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    
+        @include tablet-only {
+            order: 3;
+            align-self: flex-end;
+            margin: auto auto 0 auto;
+            border-bottom: none;
+            overflow: visible;
+        }
+    
+        @include desktop-only {
+            width: 35%;
+            position: absolute;
+            right: 100px;
+            bottom: 0;
+        }
     }
 
-    @include desktop-only{
-        font-size: 3.5rem;
-    }
-}
-
-.crew__description{
-    width: 87%;
-    margin: auto;
-    color: $color-secondary;
-    margin-top: 20px;
-
-    @include tablet-only{
-        font-size: 1.2rem;
-        width: 70%;
+    &__image {
+        width: 55%;
+        transform: translateY(4px);
+    
+        @include desktop-only {
+            width: auto;
+            max-height: 80vh;
+            min-height: 60vh;
+            transform: none;
+        }
     }
 
-    @include desktop-only{
-        margin: 30px 0;
-        width: 45%;
+    &__navigation-container {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    
+        @include tablet-only {
+            order: 2;
+            margin-top: 30px;
+        }
+        
+        @include desktop-only {
+            margin: auto;
+            text-align: left;
+            width: 75%;
+        }
+    }
+
+    &__navigation-container {
+        button {
+            height: 10px;
+            width: 10px;
+            padding: 0;
+            border-radius: 50%;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.398);
+            border: none;
+        
+            @include desktop-only {
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+        
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.584);
+                }
+            }
+        }
+
+        #crew-nav-button--active{
+            background-color: white;
+        }
+    }
+
+    &__text-container {
+        text-align: center;
+        margin-top: 25px;
+    
+        @include desktop-only {
+            width: 75%;
+            text-align: left;
+            margin: 140px auto 0 auto;
+        }
+    
+        .role {
+            text-transform: uppercase;
+            color: #ffffffa6;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        
+            @include tablet-only {
+                font-size: 1.7rem;
+            }
+        
+            @include desktop-only {
+                font-size: 2rem;
+            }
+        }
+        
+        .name {
+            text-transform: uppercase;
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-size: 1.7rem;
+        
+            @include tablet-only {
+                font-size: 2.8rem;
+            }
+        
+            @include desktop-only {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .description {
+            width: 87%;
+            margin: auto;
+            color: $color-secondary;
+            margin-top: 20px;
+        
+            @include tablet-only {
+                font-size: 1.2rem;
+                width: 70%;
+            }
+        
+            @include desktop-only {
+                margin: 30px 0;
+                width: 45%;
+            }
+        }
     }
 }

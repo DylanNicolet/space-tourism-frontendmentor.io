@@ -1,6 +1,6 @@
 @use '../utils' as *;
 
-.destination{
+.destination {
     padding-top: 110px;
     min-height: 100vh;
     background-image: url("/src/assets/destination/background-destination-mobile.jpg");
@@ -8,219 +8,218 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    @include tablet-only{
+    @include tablet-only {
         background-image: url("/src/assets/destination/background-destination-tablet.jpg");
     }
 
-    @include desktop-only{
+    @include desktop-only {
         background-image: url("/src/assets/destination/background-destination-desktop.jpg");
         display: flex;
         align-items: center;
         justify-content: space-around;
         max-width: 100vw;
     }
-}
 
-/*--- Image container ---*/
-.destination__planet-image-container{
-    text-align: center;
+    /*--- Image container ---*/
+    &__planet-image-container {
+        text-align: center;
+    
+        @include tablet-only {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            font-size: 1.2rem;
+        }
+    
+        @include desktop-only {
+            width: 40%;
+            margin: auto auto;
+        }
+    
+        img {
+            width: 200px;
+            animation: rotating-planet 80s cubic-bezier(0,0,0,0) infinite;
+        
+            @include tablet-only {
+                margin: 40px auto 0 auto;
+                width: 300px;
+            }
+        
+            @include desktop-only {
+                width: 500px;
+                margin: 30px;
+                align-self: center;
+            }
+        }
 
-    @include tablet-only{
-        width: 90%;
-        margin: 20px auto;
-        display: flex;
-        flex-direction: column;
-        font-size: 1.2rem;
-    }
-
-    @include desktop-only{
-        width: 40%;
-        margin: auto auto;
-    }
-
-    p{
-        margin-top: 0;
-        align-self: flex-start;
-        font-family: 'Barlow Condensed', sans-serif;
-
-        @include desktop-only{
-            font-size: 2.2rem;
+        p {
+            margin-top: 0;
+            align-self: flex-start;
+            font-family: 'Barlow Condensed', sans-serif;
+    
+            @include desktop-only {
+                font-size: 2.2rem;
+            }
+        }
+    
+        b {
+            color: grey;
+            margin-right: 10px;
         }
     }
 
-    b{
-        color: grey;
-        margin-right: 10px;
-    }
-}
-
-.destination__planet-image-container img{
-    width: 200px;
-    animation: rotating-planet 80s cubic-bezier(0,0,0,0) infinite;
-
-    @include tablet-only{
-        margin: 40px auto 0 auto;
-        width: 300px;
+    /*--- all text container ---*/
+    &__full-text-container {
+        
+        @include desktop-only {
+           width: 40%;
+        }
     }
 
-    @include desktop-only{
-        width: 500px;
-        margin: 30px;
-        align-self: center;
-    }
-}
-
-/*--- all text container ---*/
-.destination__full-text-container{
-    @include desktop-only{
-       width: 40%;
-    }
-    
-}
-
-/*--- Navigation ---*/
-.destination__navigation-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-
-    @include desktop-only{
-        justify-content: flex-start;
-    }
-}
-
-.destination__navigation-container button{
-    background-color: transparent;
-    color: $color-secondary;
-    text-transform: uppercase;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.1rem;
-    padding: 5px 0px;
-    margin: 15px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 3px solid transparent;
-
-    &:hover{
-        @include desktop-only{
-            border-bottom: 3px solid rgba(255, 255, 255, 0.424);
-            cursor: pointer;
-        }  
-    }
-    
-}
-
-#destination-nav-button--active{
-    border-bottom: 3px solid white;
-    color: white;
-}
-
-/*--- Description ---*/
-.destination__nav-and-description-container{
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    @include desktop-only{
-        text-align: left;
-    }
-}
-
-.destination__nav-and-description-container h1{
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    margin: 10px auto 0 auto;
-
-    @include tablet-only{
-        font-size: 4.3rem;
-    }
-
-    @include desktop-only{
-        transform: translateX(10px);
-        font-size: 6rem;
-    }
-}
-
-.destination__description-text{
-    color: $color-secondary;
-    padding: 0 10px;
-    margin-top: 5px;
-
-    @include tablet-only{
-        width: 550px;
-        margin: 10px auto 0 auto;
-    }
-
-    @include desktop-only{
-        padding: 0;
-        width: 80%;
-        margin: 10px auto 0 15px;
-        font-size: 1.2rem;
-        line-height: 33px;
-    }
-}
-
-/*--- Decorative line ---*/
-.destination__decorative-line{
-    width: 95%;
-    margin:  30px auto;
-    height: 1px;
-    background-color: $color-secondary;
-    opacity: 0.5;
-    
-
-    @include tablet-only{
-        margin: 50px auto 0 auto;
-    }
-
-    @include desktop-only{
-        margin: 50px auto 0 15px;
-        width: 80%;
-    }
-}
-
-/*--- stats ---*/ 
-.destination__numerical-data-container{
-    width: 90%;
-    margin: 0 auto;
-    padding-bottom: 30px;
-    text-align: center;
-
-    @include tablet-only{
+    /*--- Navigation ---*/
+    &__navigation-container {
         display: flex;
         justify-content: center;
-        padding-bottom: 0px;
-    }
-
-    @include desktop-only{
-        justify-content: flex-start;
-    }
-}
-
-.destination__numerical-data-container section{
-    @include tablet-only{
-        margin: 10px 50px;
-    }
+        margin-top: 20px;
     
-    @include desktop-only{
-        margin: 10px 80px 10px 15px;
-        text-align: left;
+        @include desktop-only{
+            justify-content: flex-start;
+        }
+
+        button {
+            background-color: transparent;
+            color: $color-secondary;
+            text-transform: uppercase;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.1rem;
+            padding: 5px 0px;
+            margin: 15px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid transparent;
+        
+            &:hover {
+                @include desktop-only {
+                    border-bottom: 3px solid rgba(255, 255, 255, 0.424);
+                    cursor: pointer;
+                }  
+            }
+        }
+        
+        #destination-nav-button--active {
+            border-bottom: 3px solid white;
+            color: white;
+        }
     }
-}
 
-.destination__numerical-data-container p{
-    color: $color-secondary;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-
-    @include desktop-only{
-        font-size: 1.3rem;
+    /*--- Description ---*/
+    &__nav-and-description-container {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    
+        @include desktop-only {
+            text-align: left;
+        }
+    
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            margin: 10px auto 0 auto;
+        
+            @include tablet-only {
+                font-size: 4.3rem;
+            }
+        
+            @include desktop-only {
+                transform: translateX(10px);
+                font-size: 6rem;
+            }
+        }
     }
-}
 
-.destination__numerical-data-container h2{
-    text-transform: uppercase;
-    font-size: 1.9rem;
-    margin-top: 0;
+    &__description-text {
+        color: $color-secondary;
+        padding: 0 10px;
+        margin-top: 5px;
+    
+        @include tablet-only {
+            width: 550px;
+            margin: 10px auto 0 auto;
+        }
+    
+        @include desktop-only {
+            padding: 0;
+            width: 80%;
+            margin: 10px auto 0 15px;
+            font-size: 1.2rem;
+            line-height: 33px;
+        }
+    }
+
+    /*--- Decorative line ---*/
+    &__decorative-line {
+        width: 95%;
+        margin:  30px auto;
+        height: 1px;
+        background-color: $color-secondary;
+        opacity: 0.5;
+    
+        @include tablet-only {
+            margin: 50px auto 0 auto;
+        }
+    
+        @include desktop-only {
+            margin: 50px auto 0 15px;
+            width: 80%;
+        }
+    }
+
+    /*--- stats ---*/ 
+    &__numerical-data-container {
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        text-align: center;
+    
+        @include tablet-only {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 0px;
+        }
+    
+        @include desktop-only {
+            justify-content: flex-start;
+        }
+    
+        section {
+            @include tablet-only {
+                margin: 10px 50px;
+            }
+            
+            @include desktop-only {
+                margin: 10px 80px 10px 15px;
+                text-align: left;
+            }
+        }
+    
+        p {
+            color: $color-secondary;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        
+            @include desktop-only {
+                font-size: 1.3rem;
+            }
+        }
+    
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.9rem;
+            margin-top: 0;
+        }
+    }
 }

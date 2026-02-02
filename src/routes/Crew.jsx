@@ -38,11 +38,11 @@ export default function Crew(){
             </section>
 
             <section className="crew__text-container">
-                <h2 className="crew__role">{currentCrew.crewRole}</h2>
+                <h2 className="role">{currentCrew.crewRole}</h2>
 
-                <h1 className="crew__name">{currentCrew.crewName}</h1>
+                <h1 className="name">{currentCrew.crewName}</h1>
 
-                <p className="crew__description">{currentCrew.crewDescription}</p>
+                <p className="description">{currentCrew.crewDescription}</p>
             </section>
             
         </section>

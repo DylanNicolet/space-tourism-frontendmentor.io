@@ -8,6 +8,7 @@ import Destination from './routes/Destination';
 import Crew from './routes/Crew';
 import Technology from './routes/Technology';
 import { store } from './redux/store';
+import "./sass/App.scss";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -9,7 +9,6 @@ export default function Header(){
     const screenWidth = useSelector((state) => state.webConfig.screenWidth)
     const desktopWidth = useSelector((state) => state.webConfig.desktopWidth)
     const tabletWidth = useSelector((state) => state.webConfig.tabletWidth)
-
     const [navOpen, setNavOpen] = React.useState(false)
 
     function handleOpenNav(){
@@ -26,7 +25,7 @@ export default function Header(){
     }
 
     return(
-        <header>
+        <header className="header">
             <img src={logo} alt="logo" className="header__logo"/>
 
             {screenWidth<tabletWidth && <button className="hamburger-button" onClick={handleOpenNav} ><img src={hamburger} alt="" /></button>}
