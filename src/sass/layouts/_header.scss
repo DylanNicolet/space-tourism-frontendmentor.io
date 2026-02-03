@@ -25,6 +25,10 @@
         background-color: transparent;
         cursor: pointer;
         margin-right: 20px;
+
+        @include tablet-only {
+            display: none;
+        }
     }
 
     .nav-mobile {
@@ -38,6 +42,10 @@
         display: flex;
         flex-direction: column;
         z-index: 1000;
+
+        @include tablet-only {
+            display: none;
+        }
 
         &__close-button {
             background-color: transparent;
@@ -70,6 +78,20 @@
     }
 
     .nav-tablet {
+        display: none;
+
+        @include tablet-only {
+            display: block;
+        }
+
+        &__numbers {
+            display: none;
+
+            @include desktop-only {
+                display: block;
+            }
+        }
+
         ul {
             display: flex;
             list-style: none;
@@ -116,4 +138,9 @@
     align-self: center;
     transform: translateX(50px);
     z-index: 5;
+    display: none;
+
+    @include desktop-only {
+        display: block;
+    }
 }
