@@ -22,50 +22,78 @@ export default function Header() {
 
     return (
         <header className="header">
-            <img src={logo} alt="logo" className="header__logo"/>
+            <img src={logo} alt="logo of Space Tourisme" className="header__logo"/>
 
             {/* Hamburger button */}
-            <button className="hamburger-button" onClick={handleOpenNav} >
+            <button className="hamburger-button" onClick={handleOpenNav} aria-label="Open menu">
                 <img src={iconHamburger} alt="" />
             </button>
 
             {/* Mobile navigation */}
             {navOpen &&
                 <nav className="nav-mobile">
-                    <button className="nav-mobile__close-button" onClick={handleCloseNav}>
+                    <button className="nav-mobile__close-button" onClick={handleCloseNav} aria-label="Close menu">
                         <img src={iconClose} alt="" />
                     </button>
                     <ul>
-                        <NavLink to="/" end><b>00</b> HOME</NavLink>
-                        <NavLink to="destination" ><b>01</b> DESTINATION</NavLink>
-                        <NavLink to="crew"><b>02</b> CREW</NavLink>
-                        <NavLink to="technology"><b>03</b> TECHNOLOGY</NavLink>
+                        <li>
+                            <NavLink to="/" onClick={() => setNavOpen(false)} end>
+                                <b aria-hidden="true">00</b> 
+                                HOME
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="destination"  onClick={() => setNavOpen(false)}>
+                                <b aria-hidden="true">01</b> 
+                                DESTINATION
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="crew" onClick={() => setNavOpen(false)}>
+                                <b aria-hidden="true">02</b> 
+                                CREW
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="technology" onClick={() => setNavOpen(false)}>
+                                <b aria-hidden="true">03</b> 
+                                TECHNOLOGY
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
             }
 
             {/* Decorative line for the desktop navigation */}
-            <div className="nav-desktop__decorative-line"></div>
+            <div className="nav-desktop__decorative-line" aria-hidden="true"></div>
 
             {/* Desktop navigation */}
             <nav className="nav-tablet">
                 <ul>
-                    <NavLink to="/" style={({ isActive }) => isActive? activeStyle : undefined} end>
-                        <b className="nav-tablet__numbers">00</b>
-                        HOME
-                    </NavLink>
-                    <NavLink to="destination" style={({ isActive }) => isActive? activeStyle : undefined}>
-                        <b className="nav-tablet__numbers">01</b>
-                        DESTINATION
-                    </NavLink>
-                    <NavLink to="crew" style={({ isActive }) => isActive? activeStyle : undefined}>
-                        <b className="nav-tablet__numbers">02</b>
-                        CREW
-                    </NavLink>
-                    <NavLink to="technology" style={({ isActive }) => isActive? activeStyle : undefined}>
-                        <b className="nav-tablet__numbers">03</b>
-                        TECHNOLOGY
-                    </NavLink>
+                    <li>
+                        <NavLink to="/" style={({ isActive }) => isActive? activeStyle : undefined} end>
+                            <b className="nav-tablet__numbers">00</b>
+                            HOME
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="destination" style={({ isActive }) => isActive? activeStyle : undefined}>
+                            <b className="nav-tablet__numbers">01</b>
+                            DESTINATION
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="crew" style={({ isActive }) => isActive? activeStyle : undefined}>
+                            <b className="nav-tablet__numbers">02</b>
+                            CREW
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="technology" style={({ isActive }) => isActive? activeStyle : undefined}>
+                            <b className="nav-tablet__numbers">03</b>
+                            TECHNOLOGY
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
         </header>

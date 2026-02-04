@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Homepage() {
     return(
-        <section className="homepage">
+        <main className="homepage">
             <section className="text-container">
                 <p className="text-container__slogan">SO, YOU WANT TO TRAVEL TO</p>
                 <h1 className="text-container__title">SPACE</h1>
@@ -17,6 +17,6 @@ export default function Homepage() {
                 <div className="explore-button__desktop-hover"></div>
                 <NavLink to={"destination"} className="explore-button__text">EXPLORE</NavLink>
             </section>
-        </section> 
+        </main> 
     )
 }
