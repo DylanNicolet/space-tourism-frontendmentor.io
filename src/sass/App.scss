@@ -1,15 +1,10 @@
-@import "./utils/variables";
-@import "./utils/maps";
-@import "./utils/mixins";
-@import "./utils/loops";
+@use "./base/global";
+@use "./base/typography";
+@use "./base/keyframes";
 
-@import "./base/global";
-@import "./base/typography";
-@import "./base/keyframes";
+@use "./layouts/header";
 
-@import "./layouts/header";
-
-@import "./pages/homepage";
-@import "./pages/destination";
-@import "./pages/crew";
-@import "./pages/technology";
+@use "./pages/homepage";
+@use "./pages/destination";
+@use "./pages/crew";
+@use "./pages/technology";

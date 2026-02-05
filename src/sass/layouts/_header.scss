@@ -1,4 +1,6 @@
-header{
+@use '../utils' as *;
+
+.header { 
     position: absolute;
     width: 100%;
     top: 0px;
@@ -6,110 +8,143 @@ header{
     display: flex;
     justify-content: space-between;
 
-    @include desktop-only{
+    @include desktop-only {
         top: 30px;
     }
-}
 
-.header__logo{
-    margin: 25px;
+    &__logo {
+        margin: 25px;
+    
+        @include desktop-only {
+            margin-left: 55px;
+        }
+    }
 
-    @include desktop-only{
-        margin-left: 55px;
+    .hamburger-button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 20px;
+
+        @include tablet-only {
+            display: none;
+        }
+    }
+
+    .nav-mobile {
+        background-color: #ffffff16;
+        backdrop-filter: blur(30px);
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 270px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
+
+        @include tablet-only {
+            display: none;
+        }
+
+        &__close-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            align-self: flex-end;
+            margin: 25px 20px;
+        
+            img {
+                width: 25px;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+
+            li {
+                margin-bottom: 30px;
+
+                a {
+                    text-decoration: none;
+                    color: $color-tertiary;
+
+                    b {
+                        margin-right: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-tablet {
+        display: none;
+
+        @include tablet-only {
+            display: block;
+        }
+
+        &__numbers {
+            display: none;
+
+            @include desktop-only {
+                display: block;
+            }
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            height: 100%;
+            margin: 0;
+            background: #ffffff16;
+            backdrop-filter: blur(30px);
+        
+            @include desktop-only {
+                padding-right: 130px;
+                padding-left: 100px;
+            }
+
+            li {
+                height: 100%;
+
+                a {
+                    color: $color-tertiary;
+                    text-decoration: none;
+                    color: $color-tertiary;
+                    margin-right: 40px;
+                    min-height: 100%;
+                    padding: auto;
+                    display: flex;
+                    align-items: center;
+                
+                    &:hover {
+                        border-bottom: 4px solid #ffffff5a;
+                    }
+
+                    b {
+                        margin-right: 13px;
+                    }
+                }
+            }
+        }
     }
 }
 
-.hamburger-button{
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin-right: 20px;
-}
-
-.nav-mobile{
-    background-color: #ffffff16;
-    backdrop-filter: blur(30px);
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 270px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    z-index: 1000;
-}
-
-.nav-mobile__close-button{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    align-self: flex-end;
-    margin: 25px 20px;
-
-    img{
-        width: 25px;
-    }
-}
-
-.nav-mobile ul{
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-mobile a{
-    text-decoration: none;
-    color: $color-tertiary;
-    margin-bottom: 30px;
-}
-
-.nav-mobile b{
-    margin-right: 13px;
-}
-
-.nav-tablet ul{
-    display: flex;
-    list-style: none;
-    height: 100%;
-    margin: 0;
-    background: #ffffff16;
-    backdrop-filter: blur(30px);
-
-    @include desktop-only{
-        padding-right: 130px;
-        padding-left: 100px;
-    }
-}
-
-.nav-tablet li{
-    height: 100%;
-}
-
-.nav-tablet a{
-    color: $color-tertiary;
-    text-decoration: none;
-    color: $color-tertiary;
-    margin-right: 40px;
-    min-height: 100%;
-    padding: auto;
-    display: flex;
-    align-items: center;
-
-    &:hover{
-        border-bottom: 4px solid #ffffff5a;
-    }
-}
-
-.nav-tablet b{
-    margin-right: 13px;
-}
-
-.nav-desktop__decorative-line{
+.nav-desktop__decorative-line {
     width: 3000px;
     background-color: rgba(255, 255, 255, 0.808);
     height: 0.5px;
     align-self: center;
     transform: translateX(50px);
     z-index: 5;
+    display: none;
+
+    @include desktop-only {
+        display: block;
+    }
 }
