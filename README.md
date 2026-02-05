@@ -13,6 +13,10 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 
 ## Overview
 
+### Versions
+- V1 - 2022 (Create-React-App + Redux)
+- v2 - 2026 (Vite v7.3.1)
+
 ### The challenge
 
 Users should be able to:
@@ -32,8 +36,8 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- SCSS with Live SASS pre-compiler
+- SCSS with ~~Live SASS pre-compiler~~ Vite in 2026 v2
 - Mobile-first workflow
-- React with Create-React-App
+- React with ~~Create-React-App~~ Vite in 2026 v2
 - React Router for URL routing & navigation
-- React Redux for state management
+- ~~React Redux for state management~~ Removed Redux for efficiency optimisation in 2026 v2
